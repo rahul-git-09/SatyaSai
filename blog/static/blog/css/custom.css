@@ -1,0 +1,16 @@
+nav.navbar a.navbar-brand strong {
+    text-transform: uppercase;
+    display: block;
+    line-height: 1;
+    font-size: 2rem;
+    padding-top: -1;
+    margin-bottom: 5px;
+    color:white;
+}
+
+@media (min-width: 768px)
+.navbar .navbar-nav {
+    display: inline-block;
+    display: inherit;
+    /* vertical-align: top; */
+}

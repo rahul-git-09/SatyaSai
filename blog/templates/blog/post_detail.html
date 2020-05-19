@@ -1,0 +1,122 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="blogpost-full">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="mb-5">{{ post.title }}</h2>
+            
+            <div class="post-meta d-flex align-items-center flex-wrap">   
+              <div class="author d-flex align-items-center">
+                <div class="avatar"><img src="{{ post.author.profile.image.url }}" alt="" class="img-fluid"></div><a href="#" class="name no-anchor-style"><i class="fa fa-user"></i><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+              </div>
+              <div class="date"><i class="fa fa-calendar"></i>{{ post.date_posted|date:"F d, Y" }}</div>
+              
+            </div>
+            <div class="text-content">
+              <p>{{ post.content }}
+                {% if object.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+          </div>
+        {% endif %}
+              <div class="post-footer mt-5">
+                <div class="row">
+                  <div class="col-lg-12 d-flex flex-wrap align-items-center">
+                    <div class="shares mr-3"><strong></strong><span>Shares</span></div>
+                    <ul class="social-buttons list-inline mb-0">
+                      <li class="list-inline-item"><a href="#" class="twitter d-flex mb-0">
+                        <div class="icon">                   <i class="fa fa-twitter"></i></div>
+                        <div class="text text-enter"><strong>Share Post</strong></div></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/pages/category/High-School/SHri-Satya-Sai-Senior-Secondary-School-Jodhpur-318555308294021/" class="facebook d-flex mb-0">
+                          <div class="icon">                   <i class="fa fa-facebook"></i></div>
+                          <div class="text text-enter"><strong>Share Post</strong></div></a></li>
+                          <li class="list-inline-item"><a href="#" class="google-plus d-flex mb-0">
+                            <div class="icon">                   <i class="fa fa-google-plus"></i></div>
+                            <div class="text text-enter"><strong>Share Post</strong></div></a></li>
+                          </ul>
+                        </div>
+                        <div class="form-holder"><strong class="mb-3">Leave a Comment</strong>
+                          <form id="post-comment-form" action="#">                       
+                            <div class="row">
+                              <div class="form-group col-md-6">
+                                <input type="text" name="name" placeholder="Full Name" class="form-control">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <input type="email" name="email" placeholder="Email Address" class="form-control">
+                              </div>
+                              <div class="form-group col-md-12">
+                                <textarea name="comment" placeholder="comment" class="form-control"></textarea>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <button type="submit" class="btn btn-primary">Submit a Comment</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          <div class="col-lg-4">
+            <!-- sidebar-->
+            <div class="blog-sidebar">
+              <div class="widget social border-0 pd-0">
+                <ul class="social-buttons list-unstyled">
+                  <li><a href="#" class="twitter d-flex">
+                      <div class="icon">                   <i class="fa fa-twitter"></i></div>
+                      <div class="text d-flex justify-content-between">
+                        <div class="left"><strong></strong><span>Follow</span></div>
+                        <div class="right"><strong>Twitter</strong></div>
+                      </div></a></li>
+                  <li><a href="https://www.facebook.com/pages/category/High-School/SHri-Satya-Sai-Senior-Secondary-School-Jodhpur-318555308294021/" class="facebook d-flex">
+                      <div class="icon">                   <i class="fa fa-facebook"></i></div>
+                      <div class="text d-flex justify-content-between">
+                        <div class="left"><strong></strong><span>Likes</span></div>
+                        <div class="right"><strong>Facebook</strong></div>
+                      </div></a></li>
+                  <li><a href="#" class="google-plus d-flex">
+                      <div class="icon">                   <i class="fa fa-google-plus"></i></div>
+                      <div class="text d-flex justify-content-between">
+                        <div class="left"><strong></strong><span>Followers</span></div>
+                        <div class="right"><strong>Google Plus</strong></div>
+                      </div></a></li>
+                  <li><a href="#" class="youtube d-flex mb-0">
+                      <div class="icon">                   <i class="fa fa-youtube-play"></i></div>
+                      <div class="text d-flex justify-content-between">
+                        <div class="left"><strong></strong><span>Subscribers</span></div>
+                        <div class="right"><strong>Youtube</strong></div>
+                      </div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+{% endblock content %}
+ <!-- <article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+
+        <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+        <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        {% if object.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+          </div>
+        {% endif %}
+      </div>
+      <h3 class="article-title">Class-{{ object.class_name }}</h3>
+      <h2 class="article-title">{{ object.title }}</h2>
+      <p class="article-content">{{ object.content }}</p>
+      
+    </div>
+  </article> -->
+

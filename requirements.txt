@@ -1,0 +1,14 @@
+certifi
+chardet
+dj-database-url
+Django
+django-crispy-forms
+django-heroku
+gunicorn
+idna
+Pillow
+psycopg2
+pytz
+requests
+urllib3
+whitenoise
