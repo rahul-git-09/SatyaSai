@@ -27,8 +27,8 @@
       <div class="container-fluid text-center" style="background-color:#ef5285; color:white; padding-bottom:2px; ">
         <header>
           <h2>Baba's Blessings</h2>
-        </header>
-        <div class="signature mx-auto"><img src="media/sai.png" alt="..." class="img-fluid"></div>
+        </header>{% static 'blog/css/font.css' %}
+        <div class="signature mx-auto"><img src="{% static 'sai.png' %}" alt="..." class="img-fluid"></div>
         <div class="row">
           <p class="col-lg-8 mx-auto">“No bird casts the seed on land to grow food for itself, nor do beasts plough and enclose fields claiming - this is mine, this is for my children and children's children.”</p>
         </div>
@@ -68,7 +68,7 @@
             <div class="swiper-slide">
               <div class="event row align-items-center align-items-stretch">
                 <div class="col-lg-6 pr-lg-0">
-                  <div class="image"><img src="media/addmission.jpg" alt="New Addmission Started in our School">
+                  <div class="image"><img src="{% static 'addmission.jpg' %}" alt="New Addmission Started in our School">
                     <div class="overlay d-flex align-items-end">
                       <div class="date"><strong>27</strong><span>June 2020</span></div>
                     </div>
@@ -101,7 +101,7 @@
                   {% for post in posts %}      
                   <div class="col-lg-4">
                     <div class="blog-post">
-                      <div class="image"><img src="media/blog-img.jpg" alt="Subject">
+                      <div class="image"><img src="{% static 'blog-img.jpg' %}" alt="Subject">
                         <div class="overlay align-items-center justify-content-center"><a href="{% url 'post-detail' post.id %}" class="btn btn-outline-light">Read more</a></div>
                       </div>
                         <div class="author"><img src="{{ post.author.profile.image.url }}" alt="author" class="img-fluid"></div>
@@ -161,19 +161,8 @@
                   <p class="feedback col-lg-8 mx-auto">I chose our School because it is the best school in Jodhpur and teachers are very kind and helpful. You meet lots of nice people and it has a great Sixth Form</p>
                 </div>
                 <div class="user d-flex align-items-center justify-content-center">
-                  <div class="avatar"><img src="media/aayush.png" alt="Marco Antonio" class="img-fluid"></div>
+                  <div class="avatar"><img src="{% static 'aayush.png' %}" alt="Marco Antonio" class="img-fluid"></div>
                   <div class="title"><strong class="text-uppercase">Aayush Kachhwaha</strong><span>Grade 7</span></div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial">
-                <div class="row">
-                  <p class="feedback col-lg-8 mx-auto">The teaching, in my opinion, is the best that anyone can hope for. Our School staff provide an environment in which students are able to reach their full potential. As well as this, I felt constantly challenged to push myself to exceed what is expected. I have no doubt that the person I become is due to my time spent here and that the last six years have been the best of my life..</p>
-                </div>
-                <div class="user d-flex align-items-center justify-content-center">
-                  <div class="avatar"><img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/avatar-2.jpg" alt="Marissa Spencer" class="img-fluid"></div>
-                  <div class="title"><strong class="text-uppercase">Ronit</strong><span>Class 12 </span></div>
                 </div>
               </div>
             </div>
