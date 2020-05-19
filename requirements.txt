@@ -4,7 +4,7 @@ dj-database-url
 Django
 django-crispy-forms
 django-heroku
-gunicorn
+gunicorn==20.0.4
 idna
 Pillow
 psycopg2
