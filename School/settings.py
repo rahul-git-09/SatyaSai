@@ -25,7 +25,7 @@ SECRET_KEY = 'ul2kz*0fn1^y7bvz0)@dq7$k13@8_g94c10w+rbrkp3ixoj$p4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [satyasaischool.herokuapp.com]
 
 
 # Application definition
