@@ -17,11 +17,11 @@
               </div>
             </div>
           </div>
-         
         <!-- Add Pagination-->
         <div class="swiper-pagination"></div>
       </div>
-
+      </div>
+    </section>
     
     <!-- Info Boxes Section-->
     <section class="info-boxes">
@@ -130,51 +130,112 @@
         </div>
       </div>
     </section>
-        <!-- Events Section-->
-    <section class="events">
-      <div class="container">
-        <header class="text-center">
-          <h2> <small>All About events updates</small>Upcoming Events</h2>
-          <div class="row text-center">
-            <p class="col-lg-8 mx-auto">Here are some news about various upcomming events in our school. </p>
-          </div>
-        </header>
-        <div class="swiper-container events-slider pb-5">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="event row align-items-center align-items-stretch">
-                <div class="col-lg-6 pr-lg-0">
-                  <div class="image"><img src="{% static 'addmission.jpg' %}" alt="New Addmission Started in our School">
-                    <div class="overlay d-flex align-items-end">
-                      <div class="date"><strong>27</strong><span>June 2020</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 pl-lg-0">
-                  <div class="text bg-gray d-flex align-items-center">
-                    <div class="text-inner">
-                      <h4>New addmission Process started in our school</h4>
-                      <p>Our School has announced New Addmission of class Nursery to 12th for the session 2020-2021. Contact School Administration for more information about that..</p><a href="{% url 'contact' %}" class="btn btn-outline-primary">Read more</a>
-                    </div>
-                  </div>
-                </div>
+        <!-- events sections -->
+       <section class="events">
+          <div class="container">
+            <header class="text-center">
+              <h2> <small>All About events updates</small>Events & Gallery</h2>
+              <div class="row text-center">
+                <p class="col-lg-8 mx-auto">Here are some news about various events in our school. </p>
               </div>
-            </div>
-          </div>
-        </div>
-          <!-- Add Pagination-->
-          <div class="swiper-pagination mt-5"></div>
-        </div>
-      </div>
-    </section>
+            </header>
+                        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                              aria-selected="true">Events</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                              aria-selected="false">Gallery</a>
+                          </li>
+                        </ul> 
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active text-center" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D1182527528750932%26id%3D100009810876573&show_text=false&width=552&height=634&appId" width="552" height="634" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                          </div>
+                          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                 <!--Carousel Wrapper-->
+                                <div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+                                  <!--Indicators-->
+                                  <ol class="carousel-indicators">
+                                    <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-example-2" data-slide-to="1"></li>
+                                    <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                                  </ol>
+                                  <!--/.Indicators-->
+                                  <!--Slides-->
+                                  <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active">
+                                      <div class="view">
+                                        <img class="d-block w-100" src="https://scontent.fjdh1-1.fna.fbcdn.net/v/t1.0-9/10403719_344750415674510_3701584409932426170_n.jpg?_nc_cat=104&_nc_sid=43edb5&_nc_ohc=ZYLm8qnc_oMAX_C71X4&_nc_ht=scontent.fjdh1-1.fna&oh=86e4997376469713ea9a0b52dfb4d3ec&oe=5EEE640F" alt="sairam">
+                                        <div class="mask rgba-black-light"></div>
+                                      </div>
+                                      <div class="carousel-caption">
+                                        <h3 class="h3-responsive"></h3>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                      <!--Mask color-->
+                                      <div class="view">
+                                        <img class="d-block w-100" src="https://scontent.fjdh1-1.fna.fbcdn.net/v/t1.0-9/68326290_946847918985562_2013542266785759232_n.jpg?_nc_cat=111&_nc_sid=8bfeb9&_nc_ohc=Oru7B_7bQU0AX_Muqwy&_nc_ht=scontent.fjdh1-1.fna&oh=c5c212ad3de5a6870608e73ad09d4639&oe=5EEF17FF" alt="sairam">
+                                        <div class="mask rgba-black-light"></div>
+                                      </div>
+                                      <div class="carousel-caption">
+                                        <h3 class="h3-responsive"> </h3>
+                                      </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                      <!--Mask color-->
+                                      <div class="view">
+                                        <img class="d-block w-100" src="https://scontent.fjdh1-1.fna.fbcdn.net/v/t1.0-9/56474590_869486296721725_1741603985782996992_n.jpg?_nc_cat=107&_nc_sid=8bfeb9&_nc_ohc=ktxo3DDFMskAX-9miTW&_nc_ht=scontent.fjdh1-1.fna&oh=941688e830cf90cf5b347839f232917f&oe=5EEC8D1C" alt="sairam">
+                                        <div class="mask rgba-black-light"></div>
+                                      </div>
+                                      <div class="carousel-caption">
+                                        <h3 class="h3-responsive"></h3>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!--/.Slides-->
+                                  <!--Controls-->
+                                  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                  </a>
+                                  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                  </a>
+                                  <!--/.Controls-->
+                                </div>
+                                <!--/.Carousel Wrapper-->
+                          </div>
+
+                        </div>  
+      </section>
+
+        
+
+
+
+
+
+
+
          <!-- Divider Section-->
     <section style="background: url(media/divider-bg.jpg) fixed;" class="divider has-overlay-darker">
       <div class="container">
-        <h2>Become a teacher</h2>
+        <h2>Director Sir Guidence for teachers</h2>
         <div class="row">
-          <p class="col-lg-8">1) A teacher is a great source of knowledge, prosperity and enlightenment by which anybody can be benefited.<br>2) Teachers are the gifts of god who make our career and guide us towards success. <br>3) Teachers make their students academically strong and they always encourage their students to do better in their life.</p>
+          <div class="col-md-4">
+                <p class="text-center"><img src="" alt="Sir Pic" class="img-thumbnail img-fluid" width="230px" height="450px"></p>
+                <p class="text-center">Narendra Kachhawaha</p>
+              </div>
+          <div class="col-lg-8">
+              <p >1) A teacher is a great source of knowledge, prosperity and enlightenment by which anybody can be benefited.<br>2) Teachers are the gifts of god who make our career and guide us towards success. <br>3) Teachers make their students academically strong and they always encourage their students to do better in their life.</p>
+              <div class="CTAs"><a href="{% url 'contact' %}" class="btn btn-primary">Apply now</a><a href="{% url 'blog-about' %}" class="btn btn-outline-light">Learn more</a></div>
+          </div>
         </div>
-        <div class="CTAs"><a href="{% url 'contact' %}" class="btn btn-primary">Apply now</a><a href="{% url 'blog-about' %}" class="btn btn-outline-light">Learn more</a></div>
+        
       </div>
     </section>
      <!-- Testimonials Section-->
