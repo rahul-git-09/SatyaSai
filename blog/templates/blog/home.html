@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
 {% load static %}
 {% block content %}
+
     <section class="hero hero-home">
       <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
@@ -87,28 +88,28 @@
               <div class="col-lg-12">   
               {% if is_paginated %}
 
-      {% if page_obj.has_previous %}
-        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-      {% endif %}
+                {% if page_obj.has_previous %}
+                  <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
 
-      {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-      {% endfor %}
+                {% for num in page_obj.paginator.page_range %}
+                  {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                  {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                  {% endif %}
+                {% endfor %}
 
-      {% if page_obj.has_next %}
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-      {% endif %}
+                {% if page_obj.has_next %}
+                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
 
-    {% endif %}
-          </div>
-        </div>
-      </div>
+              {% endif %}
+                    </div>
+                  </div>
+                </div>
     </section>
     
        <!-- Statistics Section-->
@@ -215,13 +216,14 @@
          <!-- Divider Section-->
     <section style="background: url(media/divider-bg.jpg) fixed;" class="divider has-overlay-darker">
       <div class="container">
-        <h2>Director Sir Guidence for teachers</h2>
+        
         <div class="row">
           <div class="col-md-4">
-                <p class="text-center"><img src="" alt="Sir Pic" class="img-thumbnail img-fluid" width="230px" height="450px"></p>
+                <p class="text-center"><img src="https://scontent.fjdh1-1.fna.fbcdn.net/v/t1.0-9/55465101_860893680914320_661704454285819904_n.jpg?_nc_cat=106&_nc_sid=8bfeb9&_nc_ohc=bRqvXP5ertEAX9m2Dag&_nc_ht=scontent.fjdh1-1.fna&oh=41079c94a1bc2e5cc04355cccde429e5&oe=5EF03E21" alt="Sir Pic" class="img-thumbnail img-fluid" width="200px" height="300px"></p>
                 <p class="text-center">Narendra Kachhawaha</p>
               </div>
           <div class="col-lg-8">
+                <h2>Director Sir Guidence for teachers</h2>
               <p >1) A teacher is a great source of knowledge, prosperity and enlightenment by which anybody can be benefited.<br>2) Teachers are the gifts of god who make our career and guide us towards success. <br>3) Teachers make their students academically strong and they always encourage their students to do better in their life.</p>
               <div class="CTAs"><a href="{% url 'contact' %}" class="btn btn-primary">Apply now</a><a href="{% url 'blog-about' %}" class="btn btn-outline-light">Learn more</a></div>
           </div>
@@ -243,7 +245,7 @@
                   <p class="feedback col-lg-8 mx-auto">I chose our School because it is the best school in Jodhpur and teachers are very kind and helpful. You meet lots of nice people and it has a great Sixth Form</p>
                 </div>
                 <div class="user d-flex align-items-center justify-content-center">
-                  <div class="avatar"><img src="{% static 'aayush.png' %}" alt="Marco Antonio" class="img-fluid"></div>
+                  <div class="avatar"><img src="{% static 'aayush.jpg' %}" alt="Marco Antonio" class="img-fluid"></div>
                   <div class="title"><strong class="text-uppercase">Aayush Kachhwaha</strong><span>Grade 7</span></div>
                 </div>
               </div>
@@ -253,6 +255,5 @@
         </div>
       </div>
     </section>
- 
 {% endblock content %}
     
