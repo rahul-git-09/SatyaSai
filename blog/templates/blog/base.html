@@ -33,40 +33,43 @@
     <link rel="shortcut icon"  href="{% static  'media/favicon.ico' %}" >
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/custom.css' %}" >
-   
+    <style type="text/css">@media (max-width: 394px) { button.navbar-toggler {margin-left:150px;} .navbar-brand{ margin-left: 25px }
+</style>
   </head>
   <body>
 
             <!-- header-->
-        <header class="header">
-            <nav class="navbar navbar-fixed-top navbar-expand-md pb-0" style="background-color: #ef5285;">
-              <div class="container">
-                <a class="navbar-brand mr-2" href="{% url 'blog-home' %}" style= "color:white;  "><span> SHRI SATYA SAI SR SEC SCHOOL </span></a>
-                <button class="navbar-toggler" style="margin-top: 0px;"  type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation"> 
-                  <span class="navbar-toggler-icon"></span>
-                  <span class="navbar-toggler-icon"></span>  
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+              <nav class="navbar navbar-expand-md" style="background-color: rgb(239, 82, 133);">
+            
+                <a class="navbar-brand" style="color: white;" href="/"><span> SHRI SATYA SAI SR SEC SCHOOL </span></a>
+                        
+                        <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarToggle" style="margin-top: 1px;" aria-label="Toggle navigation" type="button" data-toggle="collapse" data-target="#navbarToggle">
+                          <span class="navbar-toggler-icon"></span>
+                          <span class="navbar-toggler-icon"></span>  
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
                     <div class="collapse navbar-collapse text-center" id="navbarToggle">
                     <div class="navbar-nav mr-auto"></div>
                   <!-- Navbar Right Side -->
                   <div class="navbar-nav" style="display: inherit;">
-                    <a class="nav-item nav-link" style="color: white;" href="{% url 'blog-home' %}">Home</a>
-                    <a class="nav-item nav-link" style="color: white;" href="{% url 'blog-about' %}">About</a>
-                    <a class="nav-item nav-link" style="color: white;" href="{% url 'contact' %}">Contact</a>
+                    <a class="nav-item nav-link" style="color: white;" href="/">Home</a>
+                    <a class="nav-item nav-link" style="color: white;" href="/about/">About</a>
+                    <a class="nav-item nav-link" style="color: white;" href="/blog/">blog</a>
+                    <a class="nav-item nav-link" style="color: white;" href="/contact/">Contact</a>
                     {% if user.is_authenticated %}
-                      <a class="nav-item nav-link" style="color: white;" href="{% url 'post-create' %}">New Post</a>
-                      <a class="nav-item nav-link" style="color: white;"  href="{% url 'profile' %}">Profile</a>
-                      <a class="nav-item nav-link" style="color: white;" href="{% url 'logout' %}">Logout</a>
-                    {% else %}
-                      <a class="nav-item nav-link" style="color: white;" href="{% url 'login' %}">Login</a>
-                      <a class="nav-item nav-link" style="color: white;" href="{% url 'register' %}">Register</a>
-                    {% endif %}
+                <a class="nav-item nav-link" style="color: white;" href="{% url 'post-create' %}">New Post</a>
+                <a class="nav-item nav-link" style="color: white;"  href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" style="color: white;" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" style="color: white;" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" style="color: white;" href="{% url 'register' %}">Register</a>
+              {% endif %}
+                    
                   </div>
                 </div>
-              </div>
-            </nav>
-        </header>
+              
+            </nav>              
+  
         <main role="main" class="container">
           <div class="row">
             <div class="col-md-12">
@@ -116,14 +119,14 @@
                 <h4 class="text-thin">Navigation</h4>
                 <div class="d-flex flex-wrap">
                   <ul class="navigation list-unstyled">
-                    <li><a href="{% url 'blog-home' %}">Home </a></li>
+                    <li><a href="/">Home </a></li>
                     <li><a href="{% url 'blog-about' %}">About </a></li>
                     <li><a href="{% url 'contact' %}">Courses</a></li>
                     <li><a href="#">Jobs</a></li>
                     <li><a href="#">Gallery</a></li>
                   </ul>
                   <ul class="navigation list-unstyled">
-                    <li><a href="{% url 'register' %}">Blog </a></li>
+                    <li><a href="/blog/">Blog </a></li>
                     <li><a href="{% url 'blog-about' %}">Teachers </a></li>
                     <li><a href="#">Privacy</a></li>
                     <li><a href="#">FAQ</a></li>

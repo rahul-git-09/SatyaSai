@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    <div class="container">
+
+    <div class="container text-center pd-15">
     	<h2>You have been logged out</h2>
     	<div class="border-top pt-3">
         <small class="text-muted">
@@ -8,4 +9,52 @@
         </small>
     	</div>
     </div>
+  <div class="text-center">
+  <svg width="300" height="300" >
+   <circle cx="80" cy="80" r="25" fill="#795548"">
+   <animate attributeName="cx" values="80;95;95;80;80;65;65;80" dur="3s" fill="freeze" repeatCount="1"/>
+   <animate attributeName="cy" values="80;80;80;70;70;80;80;80" dur="3s" fill="freeze" repeatCount="1" />
+   </circle>
+   
+   <circle cx="80" cy="80" r="10" fill="black">
+   <animate attributeName="cx" values="80;95;95;80;80;65;65;80" dur="3s" fill="freeze" repeatCount="1"/>
+   <animate attributeName="cy" values="80;80;80;70;70;80;80;80" dur="3s" fill="freeze" repeatCount="1" />
+   </circle>
+   
+   <circle cx="90" cy="70" r="5" fill="white">
+   <animate attributeName="cx" values="90;95;95;90;90;85;85;90" dur="3s" fill="freeze" repeatCount="1"/>
+   </circle>
+   
+   <ellipse cx="80" cy="80" rx="62.5" ry="47.5" fill="none" stroke="white" stroke-width="25">
+   <animate attributeName="ry" values="47.5;47.5;47.5;47.5;47.5;47.5;47.5;15;47.5;15;47.5" dur="5s" fill="freeze" repeatCount="1"/>
+   </ellipse>
+   
+   <ellipse cx="80" cy="80" rx="50" ry="35" fill="none" stroke="black">
+   <animate attributeName="ry" values="35;35;35;35;35;35;35;2;35;2;35" dur="5s" fill="freeze" repeatCount="1"/>
+   </ellipse>
+   
+   
+   <circle cx="207.5" cy="80" r="25" fill="#795548">
+   <animate attributeName="cx" values="207.5;222.5;222.5;207.5;207.5;192.5;192.5;207.5" dur="3s" fill="freeze" repeatCount="1"/>
+   <animate attributeName="cy" values="80;80;80;70;70;80;80;80" dur="3s" fill="freeze" repeatCount="1" />
+   </circle>
+   
+   <circle cx="207.5" cy="80" r="10" fill="black">
+   <animate attributeName="cx" values="207.5;222.5;222.5;207.5;207.5;192.5;192.5;207.5" dur="3s" fill="freeze" repeatCount="1"/>
+   <animate attributeName="cy" values="80;80;80;70;70;80;80;80" dur="3s" fill="freeze" repeatCount="1" />
+   </circle>
+   
+   <circle cx="217.5" cy="70" r="5" fill="white">
+   <animate attributeName="cx" values="217.5;222.5;222.5;217.5;217.5;212.5;212.5;217.5" dur="3s" fill="freeze" repeatCount="1"/>
+   </circle>
+   
+   <ellipse cx="207.5" cy="80" rx="62.5" ry="47.5" fill="none" stroke="white" stroke-width="25">
+   <animate attributeName="ry" values="47.5;47.5;47.5;47.5;47.5;47.5;47.5;15;47.5;15;47.5" dur="5s" fill="freeze" repeatCount="1"/>
+   </ellipse>
+   
+   <ellipse cx="207.5" cy="80" rx="50" ry="35" fill="none" stroke="black">
+   <animate attributeName="ry" values="35;35;35;35;35;35;35;2;35;2;35" dur="5s" fill="freeze" repeatCount="1"/>
+   </ellipse>
+</svg>
+</div>
 {% endblock content %}

@@ -57,80 +57,8 @@
       </div>
     </section>
 
-    <!-- blog section -->
-    <section class="blog bg-gray"> 
-          <div class="container">
-            <header class="text-center">
-              <h2> <small>From the blog</small>Recent Posts</h2>
-            </header>
-            <div class="row">
-                  {% for post in posts %}      
-                  <div class="col-lg-4">
-                    <div class="blog-post">
-                      <div class="image"><img src="{% static 'blog-img.jpg' %}" alt="Subject">
-                        <div class="overlay align-items-center justify-content-center"><a href="{% url 'post-detail' post.id %}" class="btn btn-outline-light">Read more</a></div>
-                      </div>
-                        <div class="author"><img src="{{ post.author.profile.image.url }}" alt="author" class="img-fluid"></div>
-                        <div class="text"><a href="{% url 'post-detail' post.id %}">
-                        <h4 class="text-this">{{ post.title }}</h4></a>
-                        <h5 class="text-this" >Class -{{ post.class_name }}</h5>
-                        <ul class="post-meta list-inline">
-                          <li class="list-inline-item"><i class="icon-clock-1"></i> {{ post.date_posted|date:"F d, Y" }}</li>
-                          <li class="list-inline-item"><i class="icon-chat"></i><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</li>
-                        </ul>
-                        <p>{{ post.content }}</p>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %} 
-            <div class="container">
-            <div class = "row">
-              <div class="col-lg-12">   
-              {% if is_paginated %}
-
-                {% if page_obj.has_previous %}
-                  <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                {% endif %}
-
-                {% for num in page_obj.paginator.page_range %}
-                  {% if page_obj.number == num %}
-                    <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                  {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
-                  {% endif %}
-                {% endfor %}
-
-                {% if page_obj.has_next %}
-                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-                  <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                {% endif %}
-
-              {% endif %}
-                    </div>
-                  </div>
-                </div>
-    </section>
     
-       <!-- Statistics Section-->
-    <section class="statistics pt-0 pb-0 bg-primary has-pattern">
-      <div class="container-fluid text-center">
-        <div class="row">
-          <div class="item col-lg-3 col-md-6"><strong>1995</strong>
-            <p>Year Found</p>
-          </div>
-          <div class="item col-lg-3 col-md-6"><strong>537</strong>
-            <p>No. of Students</p>
-          </div>
-          <div class="item col-lg-3 col-md-6"><strong>99.657</strong>
-            <p>Average board result</p>
-          </div>
-          <div class="item col-lg-3 col-md-6"><strong>23</strong>
-            <p>Awards Winner</p>
-          </div>
-        </div>
-      </div>
-    </section>
+
         <!-- events sections -->
        <section class="events">
           <div class="container">
@@ -213,6 +141,25 @@
 
                         </div>  
       </section>
+       <!-- Statistics Section-->
+    <section class="statistics pt-0 pb-0 bg-primary has-pattern">
+      <div class="container-fluid text-center">
+        <div class="row">
+          <div class="item col-lg-3 col-md-6"><strong>1995</strong>
+            <p>Year Found</p>
+          </div>
+          <div class="item col-lg-3 col-md-6"><strong>537</strong>
+            <p>No. of Students</p>
+          </div>
+          <div class="item col-lg-3 col-md-6"><strong>99.657</strong>
+            <p>Average board result</p>
+          </div>
+          <div class="item col-lg-3 col-md-6"><strong>23</strong>
+            <p>Awards Winner</p>
+          </div>
+        </div>
+       </div>
+    </section>
          <!-- Divider Section-->
     <section style="background: url(media/divider-bg.jpg) fixed;" class="divider has-overlay-darker">
       <div class="container">
