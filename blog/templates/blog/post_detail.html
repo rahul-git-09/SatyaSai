@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-lg-8">
             <h2 class="mb-5">{{ post.title }}</h2>
-            <img src="{{post.image.url}}" alt ="connect" style="max-height: 300px;">
+            <img src="{{ post.image.url }}" alt ="connect" style="max-height: 300px;max-width: 700px;">
             <div class="post-meta d-flex align-items-center flex-wrap">   
               <div class="author d-flex align-items-center">
                 <div class="avatar"><img src="{{ post.author.profile.image.url }}" alt="" class="img-fluid"></div><a href="#" class="name no-anchor-style"><i class="fa fa-user"></i><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
@@ -16,7 +16,7 @@
               
             </div>
             <div class="text-content">
-              <p>{{ post.content }}
+              <p>{{ post.content|linebreaks }}</p>
                 {% if object.author == user %}
           <div>
             <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>

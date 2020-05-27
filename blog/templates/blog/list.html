@@ -26,7 +26,7 @@
                           <li class="list-inline-item"><i class="icon-clock-1"></i> {{ post.date_posted|date:"F d, Y" }}</li>
                           <li class="list-inline-item"><i class="icon-chat"></i><a href="{% url 'user-posts' post.author.username %}">{{ post.author }}</li>
                         </ul>
-                        <p>{{ post.content }}</p>
+                        <p>{{ post.content|truncatewords_html:75 }}</p>
                       </div>
                     </div>
                   </div>
