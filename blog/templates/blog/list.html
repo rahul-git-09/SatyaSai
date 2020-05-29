@@ -15,7 +15,8 @@
                   {% for post in posts %}      
                   <div class="col-lg-4">
                     <div class="blog-post">
-                      <div class="image"><img src="{{ post.image.url }}" alt="Subject" class="container">
+                      <div class="image">
+                        <img src="{{ post.image.url }}" alt="Subject" class="image" style="height: 200px;">
                         <div class="overlay align-items-center justify-content-center"><a href="{% url 'post-detail' post.id %}" class="btn btn-outline-light">Read more</a></div>
                       </div>
                         <div class="author"><img src="{{ post.author.profile.image.url }}" alt="author" class="img-fluid"></div>
