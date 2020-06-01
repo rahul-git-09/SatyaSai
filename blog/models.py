@@ -5,6 +5,7 @@ from django.urls import reverse
 from PIL import Image
 from django.dispatch import receiver
 import os
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
@@ -15,7 +16,7 @@ class Post(models.Model):
     )
     class_name = models.CharField(max_length=10, choices=class_choice, default= 'all')
     title = models.CharField(max_length=100)
-    content = models.TextField(null=True, blank=True)
+    content =RichTextUploadingField(null=True, blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to= 'blog_img/%d%m%Y', default='blogimg.jpg',blank=True)

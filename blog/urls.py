@@ -5,7 +5,8 @@ from .views import (
     PostCreateView,
     PostUpdateView,
     PostDeleteView,
-    UserPostListView
+    UserPostListView,
+    SearchResultsView,
 )
 from . import views
 from django.conf import settings
@@ -21,6 +22,7 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
     path('contact/', views.contact, name='contact'),
+    path('search/', SearchResultsView.as_view(), name='search_results'),
 ]
 
 if settings.DEBUG:

@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +144,5 @@ django_heroku.settings(locals())
 
 # This is new
 del DATABASES['default']['OPTIONS']['sslmode']
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

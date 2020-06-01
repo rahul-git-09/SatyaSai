@@ -9,6 +9,7 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
+from django.db.models import Q
 
 
 
@@ -24,7 +25,7 @@ class PostListView(ListView):
     template_name = 'blog/list.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 6
+    paginate_by = 4
 
 
 class UserPostListView(ListView):
@@ -76,6 +77,17 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
+class SearchResultsView(ListView):
+    model = Post
+    template_name = 'blog/search_results.html'
+
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = Post.objects.filter(
+            Q(title__icontains=query) | Q(class_name__icontains=query)
+        )
+        return object_list
+
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
@@ -90,3 +102,4 @@ def contact(request):
         return render(request, 'blog/contact.html', {'message_name': message_name })
     else:
         return render(request, 'blog/contact.html', {'title': 'Contact'})
+
